@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --color-light-blue: #0089ED;
+    --color-white: #FFFFFF;
+    --size-title: 34px;
+    --size-subtitle: 24px;
+    --size-text:13px;
+    --size-logo:20px;
+    --font-description: 'Poppins', sans-serif;
+    
+
+
+}
+* {
+    margin: 0;
+}
+
+header{
+    background-color: var(--color-light-blue);
+    display: flex;
+    height: 25px;
+    width: 100%;
+}
+
+.header-logo {
+    font-family: var(--font-description);
+    font-size: var(--size-logo);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: 42px;
+    margin-left: 31px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh; /* ou ajuste conforme necessário */
+  }
+
+.top-half-left {
+    display:flex;
+    flex-direction: row;
+    margin: 0;
+    background-color:var(--color-light-blue);
+    width: 100%;
+    height: 10%;
+    gap:-5px;
+}
+
+.description {
+    display:flex;
+    flex-direction: column;
+    color:var(--color-white);
+    width: 320px;
+    height: 224px;
+    margin-left: 73px;
+    margin-top: 110px;
+    position: relative;
+
+}
+
+.description-title {
+    font-family: var(--font-description);
+    font-size: var(--size-title);
+    font-weight: 600;
+    width: 174px;
+    height: 51px;
+    z-index: 0;
+}
+
+.description-subtitle {
+    font-family: var(--font-description);
+    font-size: var(--size-subtitle);
+    font-weight: 400;
+    width: 396px;
+    height: 36px;
+    z-index: 0;
+    
+}
+
+.description-text {
+    font-family: var(--font-description);
+    font-size: var(--size-text);
+    font-weight: 300;
+    padding-top: 22px;
+    width: 311px;
+    height: 115x;
+}
+.character-figure {
+    display:flex;
+    height: 385px;
+    width: 385px;
+    margin-top: 0px;
+    margin-left: 10px;
+    
+}
+
+.container-form {
+    background-color: aqua;
+}
+
+.top-half-right{
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+}
