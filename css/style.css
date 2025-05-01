@@ -7,7 +7,7 @@
     --size-title: 2.125rem;
     --size-subtitle: 1.5rem;
     --size-text: 0.8125rem;
-    --size-logo: 1.25rem;
+    --size-logo: 1rem;
     --font-description: 'Poppins', sans-serif;
 } 
 
@@ -23,20 +23,17 @@ form {
     width: 100%;
 }
 
-header {
-    background-color: var(--color-light-blue);
-    display: flex;
-    height: 1.5625rem;
-    width: 100vw;
-}
 
-.header-logo {
+
+.your-logo {
     font-family: var(--font-description);
     font-size: var(--size-logo);
     font-weight: 600;
     color: var(--color-white);
-    margin-top: 2.625rem;
-    margin-left: 1.9375rem;
+    padding-left: 2.625rem;
+    padding-top: 1.938rem;
+    height: 3rem;
+    
 }
 
 .container {
@@ -63,14 +60,13 @@ header {
 
 .top-half-left-text {
     display: flex;
-    width: 50%;
-
+    flex-direction: column; /* empilha your-logo e description verticalmente */
+    width: 100%; /* ou 50% se for dividir com o lado direito */
 }
 
 
 .top-half-right {
     width: 50%;
-    display: flex;
     padding-left: 4rem;
 
 }
@@ -129,8 +125,10 @@ header {
 .container-form {
     background-color: var(--color-white);
     border-radius: 2.5rem;
-    width: 30.938rem; /* Subtraído 2.75rem */
-    height: 43.5625rem; /* Subtraído 2.75rem */
+    width: 33.688rem; 
+    height: 46.313rem; 
+    max-width: 36rem;   
+    max-height: 43rem;
     display: flex;
     padding: 2.75rem;
 }
@@ -280,6 +278,7 @@ header {
 .container-container {
     display: flex;
     justify-content: center;
+    padding-top: 4.938rem;
 }
 
 .account {
