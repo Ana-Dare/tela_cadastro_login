@@ -41,6 +41,13 @@ header {
 
 .container {
     display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-blue {
+    display: flex;
     flex-direction: row;
     background-color: var(--color-light-blue);
     max-height: 50vh;
@@ -65,7 +72,7 @@ header {
     width: 50%;
     display: flex;
     padding-left: 4rem;
-    padding-top: ;
+
 }
 
 .description {
@@ -122,8 +129,8 @@ header {
 .container-form {
     background-color: var(--color-white);
     border-radius: 2.5rem;
-    width: 33.688rem;
-    height: 46.3125rem;
+    width: 30.938rem; /* Subtraído 2.75rem */
+    height: 43.5625rem; /* Subtraído 2.75rem */
     display: flex;
     padding: 2.75rem;
 }
@@ -272,6 +279,85 @@ header {
 
 .container-container {
     display: flex;
-    padding-top: 4.938rem;
+    justify-content: center;
 }
 
+.account {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3.375rem;
+    padding-left: 4.563rem;
+}
+
+.account-profile {
+    display: flex;
+    gap:1.938rem;
+}
+
+.saved-account-profile {
+    display: flex;
+    flex-direction: column;
+    border:none;
+    background-color:#EFF8FF;
+    border-radius:0.563rem;
+    width: 9.063rem;
+    height: 10.25rem; 
+}
+
+.account-login {
+    display: flex;
+    flex-direction: column;
+    font-family:var(--font-description) ;
+    font-weight: 400;
+    font-size:1rem ;
+    color:#000000;
+    padding-bottom: 1.625rem;
+}
+
+.btn-delete{
+    width: 0.813rem;
+    height: 0.813rem;
+    border-radius:50%;
+    display: flex;
+    align-self: flex-end;
+    padding-top:0.688rem ;
+    padding-right:0.625rem;
+}
+
+.img-delete-profile {
+    width: 0.813rem;
+    height: 0.813rem;
+}
+
+.profile-image {
+    display: flex;
+    align-self: center;
+    width: 4.75rem;
+    height: 4.75rem;
+    font-weight: 500;
+}
+
+.profile-name {
+    display: flex;
+    align-self: center;
+    font-family:var(--font-description) ;
+    font-size:1rem ;
+    font-weight: 500;
+    color:#000000;
+    padding: 0.525rem;
+}
+
+.profile-activity {
+    display: flex;
+    align-self: center;
+    font-family:var(--font-description) ;
+    font-size:0.813rem ;
+    font-weight: 300;
+    color: #ADADAD;
+}
+
+.container-white {
+    display: flex;
+    max-height: 50vh;
+    min-height: 50vh;
+}
