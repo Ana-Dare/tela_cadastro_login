@@ -9,32 +9,21 @@
     --size-text: 0.8125rem;
     --size-logo: 1rem;
     --font-description: 'Poppins', sans-serif;
-} 
+}
 
 .html, body {
     height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-
 form {
     width: 100%;
 }
 
-
-
-.your-logo {
-    font-family: var(--font-description);
-    font-size: var(--size-logo);
-    font-weight: 600;
-    color: var(--color-white);
-    padding-left: 2.625rem;
-    padding-top: 1.938rem;
-    height: 3rem;
-    
-}
+/* --- GERAL --- */
 
 .container {
     display: flex;
@@ -52,36 +41,63 @@ form {
     width: 100vw;
 }
 
+.container-white {
+    display: flex;
+    max-height: 50vh;
+    min-height: 50vh;
+}
+
+.container-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 4.938rem;
+    margin-right: 5rem;
+}
+
+/* --- LADO ESQUERDO --- */
+
 .top-half-left {
     width: 50%;
     display: flex;
-    
 }
 
 .top-half-left-text {
     display: flex;
-    flex-direction: column; /* empilha your-logo e description verticalmente */
-    width: 100%; /* ou 50% se for dividir com o lado direito */
+    flex-direction: column;
+    width: 100%;
 }
 
+.top-half-left-figure {
+    display: flex;
+    align-items: center;
+}
 
-.top-half-right {
-    width: 50%;
-    padding-left: 4rem;
+.character-figure {
+    display: flex;
+    max-height: 24.0625rem;
+    min-height: 24.0625rem;
+}
 
+.your-logo {
+    font-family: var(--font-description);
+    font-size: var(--size-logo);
+    font-weight: 600;
+    color: var(--color-white);
+    padding-left: 2.625rem;
+    padding-top: 1.938rem;
+    height: 3rem;
 }
 
 .description {
     display: flex;
     flex-direction: column;
-    align-self:center;
+    align-self: center;
     color: var(--color-white);
     width: 20rem;
     height: 11rem;
     padding-left: 4.563rem;
-    padding-bottom: 5.25rem;
     padding-top: 5.25rem;
-
+    padding-bottom: 5.25rem;
 }
 
 .description-title {
@@ -108,35 +124,26 @@ form {
     padding-top: 1.375rem;
     width: 19.4375rem;
     height: 7.1875rem;
-    line-height:1.2rem;  
+    line-height: 1.2rem;
 }
 
-.top-half-left-figure {
-    display: flex;
-    align-items: center;
-}
+/* --- LADO DIREITO (FORMULÁRIO) --- */
 
-.character-figure {
-    display: flex;
-    max-height: 24.0625rem;
-    min-height: 24.0625rem;
+.top-half-right {
+    width: 50%;
+    padding-left: 4rem;
 }
 
 .container-form {
     background-color: var(--color-white);
     border-radius: 2.5rem;
-    width: 33.688rem; 
-    height: 46.313rem; 
-    max-width: 36rem;   
+    width: 33.6rem;
+    height: 46.313rem;
+    max-width: 36rem;
     max-height: 43rem;
     display: flex;
     padding: 2.75rem;
-}
-
-.form-content {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2.688rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .header-form {
@@ -144,16 +151,16 @@ form {
     gap: 10%;
 }
 
+.header-form-left {
+    display: flex;
+    flex-direction: column;
+}
+
 .header-form-rigth {
     display: flex;
     flex-direction: column;
     width: 50%;
     text-align: right;
-}
-
-.header-form-left { 
-    display: flex;
-    flex-direction: column;
 }
 
 .form-welcome {
@@ -180,18 +187,98 @@ form {
     margin-top: 0.0625rem;
 }
 
-.form-account {
+.form-account,
+.form-sing-up {
     font-family: var(--font-description);
     font-weight: 400;
     font-size: 0.8125rem;
+}
+
+.form-account {
     color: #8D8D8D;
 }
 
-.form-sing-up { 
+.form-sing-up {
+    color: var(--color-light-blue);
+}
+
+/* --- LOGIN SOCIAL --- */
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.625rem;
+}
+
+.social-login-button-google {
+    display: flex;
+}
+
+.social-login-button-face-apple {
+    display: flex;
+    padding-left: 1.25rem;
+    gap: 0.8125rem;
+}
+
+.login-google {
+    display: flex;
+    width: 18.625rem;
+    height: 3.4375rem;
+    border: none;
+    border-radius: 0.5625rem;
+    background-color: #E9F1FF;
+    color: var(--color-light-blue);
+}
+
+.text-google {
     font-family: var(--font-description);
     font-weight: 400;
-    font-size: 0.8125rem;
+    font-size: 1rem;
+    padding: 0.9375rem 4.25rem 1rem 0.625rem;
+}
+
+.img-google {
+    width: 1.625rem;
+    height: 1.625rem;
+    padding: 0.9375rem 0.5rem 0.875rem 1.3125rem;
+}
+
+.login-buttons {
+    width: 3.75rem;
+    height: 3.4375rem;
+    background-color: #E9F1FF;
+    border: none;
+    border-radius: 0.5625rem;
+}
+
+/* --- CAMPOS DO FORMULÁRIO --- */
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.688rem;
+}
+
+.enter-username,
+.enter-password {
+    display: flex;
+    flex-direction: column;
+    gap: 0.813rem;
+}
+
+.enter-password {
+    padding-top: 1.188rem;
+}
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    font-family: var(--font-description);
+    font-weight: 400;
+    font-size: 0.813rem;
     color: var(--color-light-blue);
+    padding-top: 0.75rem;
 }
 
 .label-form {
@@ -207,18 +294,10 @@ form {
     width: 100%;
     height: 3.5625rem;
     background-color: var(--color-white);
-    border: solid 1px;
-    border-color: var(--color-light-blue);
+    border: solid 1px var(--color-light-blue);
     border-radius: 0.5625rem;
     box-sizing: border-box;
     padding-left: 1.5625rem;
-}
-
-.input-small {
-    border-color: #ADADAD;
-    border-radius: 0.563rem;
-    width: 100%;
-    border-color: var(--color-light-blue);
 }
 
 .input-form::placeholder {
@@ -228,36 +307,10 @@ form {
     color: #808080;
 }
 
-.enter-username {
-    display: flex;
-    flex-direction: column;
-    gap:0.813rem;
-}
-
-.enter-user-number {
-    display: flex;
-    flex-direction: row;
-    gap:1.188rem;
-    padding-top: 1.188rem;
-}
-
-.enter-user {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-
-.enter-number {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-
-.enter-password {
-    display: flex;
-    flex-direction: column;
-    gap:0.813rem;
-    padding-top: 1.188rem;
+.input-small {
+    border-color: var(--color-light-blue);
+    border-radius: 0.563rem;
+    width: 100%;
 }
 
 .btn-sing-up {
@@ -265,21 +318,17 @@ form {
 }
 
 .btn-submit-sing-up {
-    border:none;
-    background-color: var(--color-light-blue);
-    border-radius:0.625rem;
-    color: var(--color-white);
-    font-family: var(--font-description);
-    font-size:1rem;
     width: 100%;
     height: 3.375rem;
+    background-color: var(--color-light-blue);
+    color: var(--color-white);
+    font-family: var(--font-description);
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.625rem;
 }
 
-.container-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 4.938rem;
-}
+/* --- PERFIS SALVOS --- */
 
 .account {
     display: flex;
@@ -288,39 +337,39 @@ form {
     padding-left: 4.563rem;
 }
 
+.account-login {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-description);
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000000;
+    padding-bottom: 1.625rem;
+}
+
 .account-profile {
     display: flex;
-    gap:1.938rem;
+    gap: 1.938rem;
 }
 
 .saved-account-profile {
     display: flex;
     flex-direction: column;
-    border:none;
-    background-color:#EFF8FF;
-    border-radius:0.563rem;
     width: 9.063rem;
-    height: 10.25rem; 
+    height: 10.25rem;
+    background-color: #EFF8FF;
+    border: none;
+    border-radius: 0.563rem;
 }
 
-.account-login {
-    display: flex;
-    flex-direction: column;
-    font-family:var(--font-description) ;
-    font-weight: 400;
-    font-size:1rem ;
-    color:#000000;
-    padding-bottom: 1.625rem;
-}
-
-.btn-delete{
-    width: 0.813rem;
-    height: 0.813rem;
-    border-radius:50%;
+.btn-delete {
     display: flex;
     align-self: flex-end;
-    padding-top:0.688rem ;
-    padding-right:0.625rem;
+    width: 0.813rem;
+    height: 0.813rem;
+    border-radius: 50%;
+    padding-top: 0.688rem;
+    padding-right: 0.625rem;
 }
 
 .img-delete-profile {
@@ -339,24 +388,21 @@ form {
 .profile-name {
     display: flex;
     align-self: center;
-    font-family:var(--font-description) ;
-    font-size:1rem ;
+    font-family: var(--font-description);
+    font-size: 1rem;
     font-weight: 500;
-    color:#000000;
+    color: #000000;
     padding: 0.525rem;
 }
 
 .profile-activity {
     display: flex;
     align-self: center;
-    font-family:var(--font-description) ;
-    font-size:0.813rem ;
+    font-family: var(--font-description);
+    font-size: 0.813rem;
     font-weight: 300;
     color: #ADADAD;
 }
 
-.container-white {
-    display: flex;
-    max-height: 50vh;
-    min-height: 50vh;
-}
+
+
