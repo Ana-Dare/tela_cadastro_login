@@ -9,139 +9,138 @@
     --size-text: 0.8125rem;
     --size-logo: 1rem;
     --font-description: 'Poppins', sans-serif;
-} 
-
-.html, body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    border: 0;
 }
-
+ * {
+    box-sizing: border-box;
+ }
 
 form {
     width: 100%;
 }
 
+/* --- GERAL --- */
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container-blue {
+    display: flex;
+    background-color: var(--color-light-blue);
+    height: 50vh;
+    padding-bottom: 4rem;
+
+}
+
+.container-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    width: fit-content;
+    height: fit-content;
+
+}
+
+/* --- LADO ESQUERDO --- */
+
+.top-half-left {
+    width: 50%;
+    display: flex;
+}
+
+.top-half-left-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-half-left-figure {
+    display: flex;
+}
+
+.character-figure {
+    display: flex;
+    width: 100%;
+}
 
 .your-logo {
     font-family: var(--font-description);
     font-size: var(--size-logo);
     font-weight: 600;
     color: var(--color-white);
-    padding-left: 2.625rem;
-    padding-top: 1.938rem;
-    height: 3rem;
-    
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-}
-
-.container-blue {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--color-light-blue);
-    max-height: 50vh;
-    min-height: 50vh;
-    width: 100vw;
-}
-
-.top-half-left {
-    width: 50%;
-    display: flex;
-    
-}
-
-.top-half-left-text {
-    display: flex;
-    flex-direction: column; /* empilha your-logo e description verticalmente */
-    width: 100%; /* ou 50% se for dividir com o lado direito */
-}
-
-
-.top-half-right {
-    width: 50%;
-    padding-left: 4rem;
+    height: 1.8rem;
+    padding-top: 1.8rem;
+    padding-left: 2.6rem;
 
 }
 
 .description {
     display: flex;
     flex-direction: column;
-    align-self:center;
+    align-self: center;
     color: var(--color-white);
     width: 20rem;
-    height: 11rem;
-    padding-left: 4.563rem;
-    padding-bottom: 5.25rem;
-    padding-top: 5.25rem;
-
+    height: 13rem;
+    padding-left: 4.5rem;
+    padding-top: 4rem;
+ 
 }
 
 .description-title {
     font-family: var(--font-description);
     font-size: var(--size-title);
     font-weight: 600;
-    width: 10.875rem;
-    height: 3.1875rem;
+    height: 51px;
 }
 
 .description-subtitle {
+    display: flex;
     font-family: var(--font-description);
     font-size: var(--size-subtitle);
     font-weight: 400;
-    width: 24.75rem;
-    height: 2.25rem;
+    height: 5.4rem;
     z-index: 0;
+    width: 23rem;
 }
 
 .description-text {
     font-family: var(--font-description);
     font-size: var(--size-text);
-    font-weight: 300;
-    padding-top: 1.375rem;
+    font-weight: 100;
     width: 19.4375rem;
-    height: 7.1875rem;
-    line-height:1.2rem;  
+    height: 7rem;
+    line-height: 100%;
+    padding-top: 1.3rem;
 }
 
-.top-half-left-figure {
-    display: flex;
-    align-items: center;
-}
+/* --- LADO DIREITO (FORMULÁRIO) --- */
 
-.character-figure {
-    display: flex;
-    max-height: 24.0625rem;
-    min-height: 24.0625rem;
+.top-half-right {
+    width: 50%;
+    padding: 2rem;
+
 }
 
 .container-form {
     background-color: var(--color-white);
     border-radius: 2.5rem;
-    width: 33.688rem; 
-    height: 46.313rem; 
-    max-width: 36rem;   
-    max-height: 43rem;
-    display: flex;
+    width: 33rem;
+    height: 45rem;
     padding: 2.75rem;
-}
-
-.form-content {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2.688rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    box-sizing: border-box;
 }
 
 .header-form {
     display: flex;
-    gap: 10%;
+    gap: 5%;
+}
+
+.header-form-left {
+    display: flex;
+    flex-direction: column;
 }
 
 .header-form-rigth {
@@ -151,24 +150,21 @@ form {
     text-align: right;
 }
 
-.header-form-left { 
-    display: flex;
-    flex-direction: column;
-}
-
 .form-welcome {
-    color: #8D8D8D;
+    color:#000000;
     font-family: var(--font-description);
     font-weight: 400;
-    font-size: 1.3125rem;
+    font-size: 1.3rem;
+    height: 2.8rem;
 }
 
 .lorem {
     color: var(--color-light-blue);
     font-family: var(--font-description);
     font-weight: 600;
-    font-size: 1.3125rem;
+    font-size: 1rem;
     width: 50%;
+    height: 2.8rem;
 }
 
 .form-sing-in {
@@ -176,8 +172,9 @@ form {
     color: #000000;
     font-family: var(--font-description);
     font-weight: 500;
-    font-size: 3.4375rem;
-    margin-top: 0.0625rem;
+    font-size: 3rem;
+    height: 5.1rem;
+    align-items: center;
 }
 
 .form-account {
@@ -185,6 +182,7 @@ form {
     font-weight: 400;
     font-size: 0.8125rem;
     color: #8D8D8D;
+    height: 1.25rem;
 }
 
 .form-sing-up { 
@@ -192,46 +190,86 @@ form {
     font-weight: 400;
     font-size: 0.8125rem;
     color: var(--color-light-blue);
+    height: 1.25rem;
 }
 
-.label-form {
+.form-sing-up:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
+}
+
+/* --- LOGIN SOCIAL --- */
+
+.social-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.625rem;
+}
+
+.social-login-button-google {
+    display: flex;
+}
+
+.social-login-button-face-apple {
+    display: flex;
+    padding-left: 1.25rem;
+    gap: 0.8125rem;
+}
+
+.login-google {
+    display: flex;
+    height: 3.4375rem;
+    border: none;
+    border-radius: 0.5625rem;
+    background-color: #E9F1FF;
+    color: var(--color-light-blue);
+}
+
+.login-google:hover {
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
+}
+
+.text-google {
     font-family: var(--font-description);
     font-weight: 400;
     font-size: 1rem;
-    color: #000000;
-    width: 100%;
-    height: 1.5rem;
+    padding: 0.9375rem 3rem 1rem 0.625rem;
 }
 
-.input-form {
-    width: 100%;
-    height: 3.5625rem;
-    background-color: var(--color-white);
-    border: solid 1px;
-    border-color: var(--color-light-blue);
+.text-google:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
+}
+
+.img-google {
+    padding: 0.9375rem 0.5rem 0.875rem 1.3125rem;
+}
+
+.login-buttons {
+    width: 3.75rem;
+    height: 3.4375rem;
+    background-color: #E9F1FF;
+    border: none;
     border-radius: 0.5625rem;
-    box-sizing: border-box;
-    padding-left: 1.5625rem;
 }
 
-.input-small {
-    border-color: #ADADAD;
-    border-radius: 0.563rem;
-    width: 100%;
-    border-color: var(--color-light-blue);
+.login-buttons:hover {
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
 }
 
-.input-form::placeholder {
-    font-family: var(--font-description);
-    font-weight: 300;
-    font-size: 0.875rem;
-    color: #808080;
-}
+/* --- CAMPOS DO FORMULÁRIO --- */
 
-.enter-username {
+.form-content {
     display: flex;
     flex-direction: column;
-    gap:0.813rem;
+    padding-top: 2.688rem;
 }
 
 .enter-user-number {
@@ -253,11 +291,66 @@ form {
     width: 50%;
 }
 
+
+.enter-username,
 .enter-password {
     display: flex;
     flex-direction: column;
-    gap:0.813rem;
+    gap: 0.813rem;
+}
+
+.enter-password {
     padding-top: 1.188rem;
+}
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    font-family: var(--font-description);
+    font-weight: 400;
+    font-size: 0.813rem;
+    color: var(--color-light-blue);
+    padding-top: 0.75rem;
+}
+
+.forgot-password:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
+}
+
+
+.label-form {
+    font-family: var(--font-description);
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000000;
+    width: 100%;
+    height: 1.5rem;
+}
+
+.input-form {
+    width: 100%;
+    height: 3.5625rem;
+    background-color: var(--color-white);
+    border: solid 1px var(--color-light-blue);
+    border-radius: 0.5625rem;
+    box-sizing: border-box;
+    padding-left: 1.5625rem;
+}
+
+.input-form::placeholder {
+    font-family: var(--font-description);
+    font-weight: 300;
+    font-size: 0.875rem;
+    color: #808080;
+}
+
+.input-small {
+    border-color: var(--color-light-blue);
+    border-radius: 0.563rem;
+    width: 100%;
 }
 
 .btn-sing-up {
@@ -265,68 +358,70 @@ form {
 }
 
 .btn-submit-sing-up {
-    border:none;
-    background-color: var(--color-light-blue);
-    border-radius:0.625rem;
-    color: var(--color-white);
-    font-family: var(--font-description);
-    font-size:1rem;
     width: 100%;
     height: 3.375rem;
+    background-color: var(--color-light-blue);
+    color: var(--color-white);
+    font-family: var(--font-description);
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.625rem;
 }
 
-.container-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 4.938rem;
+.btn-submit-sing-up:hover {
+    background-color: #006CB3; /* Cor mais escura para o hover */
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    cursor: pointer; /* Indica que é um botão clicável */
 }
+
+
+
+/* --- PERFIS SALVOS --- */
 
 .account {
     display: flex;
     flex-direction: column;
-    padding-top: 3.375rem;
-    padding-left: 4.563rem;
-}
-
-.account-profile {
-    display: flex;
-    gap:1.938rem;
-}
-
-.saved-account-profile {
-    display: flex;
-    flex-direction: column;
-    border:none;
-    background-color:#EFF8FF;
-    border-radius:0.563rem;
-    width: 9.063rem;
-    height: 10.25rem; 
+    width: 50%;
+    padding-left: 4.5rem;
+    padding-top: 3.3rem;
 }
 
 .account-login {
     display: flex;
     flex-direction: column;
-    font-family:var(--font-description) ;
+    font-family: var(--font-description);
     font-weight: 400;
-    font-size:1rem ;
-    color:#000000;
+    font-size: 1rem;
+    color: #000000;
     padding-bottom: 1.625rem;
 }
 
-.btn-delete{
-    width: 0.813rem;
-    height: 0.813rem;
-    border-radius:50%;
+.account-profile {
     display: flex;
-    align-self: flex-end;
-    padding-top:0.688rem ;
-    padding-right:0.625rem;
+    gap: 1.938rem;
 }
 
-.img-delete-profile {
+.saved-account-profile {
+    display: flex;
+    flex-direction: column;
+    width: 9.063rem;
+    height: 10.25rem;
+    background-color: #EFF8FF;
+    border: none;
+    border-radius: 0.563rem;
+}
+
+.btn-delete {
+    display: flex;
+    align-self: flex-end;
     width: 0.813rem;
     height: 0.813rem;
+    border-radius: 50%;
+    padding-top: 0.2rem;
+    padding-right: 0.2rem;
 }
+
 
 .profile-image {
     display: flex;
@@ -339,24 +434,75 @@ form {
 .profile-name {
     display: flex;
     align-self: center;
-    font-family:var(--font-description) ;
-    font-size:1rem ;
+    font-family: var(--font-description);
+    font-size: 1rem;
     font-weight: 500;
-    color:#000000;
+    color: #000000;
     padding: 0.525rem;
 }
 
 .profile-activity {
     display: flex;
     align-self: center;
-    font-family:var(--font-description) ;
-    font-size:0.813rem ;
+    font-family: var(--font-description);
+    font-size: 0.813rem;
     font-weight: 300;
     color: #ADADAD;
 }
 
-.container-white {
-    display: flex;
-    max-height: 50vh;
-    min-height: 50vh;
+@media (max-width: 412px) {
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container, .container-blue, .container-container, .container-form {
+      width: 100% !important;
+      height: 100% !important;
+      min-width: 0;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container-form {
+      border-radius: 0;
+      box-shadow: none;
+      padding: 1rem;
+    }
+  }
+
+
+@media (max-width: 1184px) {
+    .character-figure, .top-half-left-figure {
+        display: none;
+    }
+
+    .account {
+        display: none;
+    }
+
+    .top-half-left {
+        width: 40%;
+        height: 20%;
+    }
+
+    .your-logo {
+        display: none;
+    }
 }
+
+@media (max-width: 957px) {
+    .top-half-left-text {
+        display: none;
+    }
+
+    .container-blue {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
