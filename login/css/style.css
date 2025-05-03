@@ -16,16 +16,14 @@ form {
     width: 100%;
 }
 
-* {
-    outline: 1px solid red;
+main {
+    padding-bottom: 12rem;
 }
-
 /* --- GERAL --- */
 
 .container {
     display: flex;
     flex-direction: column;
-    width: 100vw;
     height: 100vh;
 }
 
@@ -33,7 +31,6 @@ form {
     display: flex;
     background-color: var(--color-light-blue);
     height: 50vh;
-    width: 100vw;
     padding-bottom: 4rem;
 
 }
@@ -86,7 +83,7 @@ form {
     width: 20rem;
     height: 11rem;
     padding-left: 4.5rem;
-    padding-top: 2rem
+    padding-top: 4rem;
  
 }
 
@@ -94,32 +91,35 @@ form {
     font-family: var(--font-description);
     font-size: var(--size-title);
     font-weight: 600;
-    width: 10.875rem;
-    height: 3.1875rem;
+    height: 3.1rem;
 }
 
 .description-subtitle {
+    display: flex;
+    align-items: center;
     font-family: var(--font-description);
     font-size: var(--size-subtitle);
     font-weight: 400;
-    width: 24.75rem;
     height: 2.25rem;
+    z-index: 0;
 }
 
 .description-text {
     font-family: var(--font-description);
     font-size: var(--size-text);
-    font-weight: 300;
+    font-weight: 100;
     padding-top: 1.375rem;
     width: 19.4375rem;
-    height: 7.1875rem;
-    line-height: 1.2rem;
+    height: 7rem;
+    line-height: 100%;
 }
 
 /* --- LADO DIREITO (FORMULÁRIO) --- */
 
 .top-half-right {
     width: 50%;
+    padding: 2rem;
+
 }
 
 .container-form {
@@ -193,6 +193,13 @@ form {
     height: 1.25rem;
 }
 
+.form-sing-up:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
+}
+
 /* --- LOGIN SOCIAL --- */
 
 .social-login {
@@ -214,7 +221,6 @@ form {
 
 .login-google {
     display: flex;
-    width: 18.625rem;
     height: 3.4375rem;
     border: none;
     border-radius: 0.5625rem;
@@ -222,11 +228,23 @@ form {
     color: var(--color-light-blue);
 }
 
+.login-google:hover {
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
+}
+
 .text-google {
     font-family: var(--font-description);
     font-weight: 400;
     font-size: 1rem;
-    padding: 0.9375rem 4.25rem 1rem 0.625rem;
+    padding: 0.9375rem 3rem 1rem 0.625rem;
+}
+
+.text-google:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
 }
 
 .img-google {
@@ -241,6 +259,11 @@ form {
     background-color: #E9F1FF;
     border: none;
     border-radius: 0.5625rem;
+}
+
+.login-buttons:hover {
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
 }
 
 /* --- CAMPOS DO FORMULÁRIO --- */
@@ -271,6 +294,14 @@ form {
     color: var(--color-light-blue);
     padding-top: 0.75rem;
 }
+
+.forgot-password:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
+}
+
 
 .label-form {
     font-family: var(--font-description);
@@ -319,12 +350,23 @@ form {
     border-radius: 0.625rem;
 }
 
+.btn-submit-sing-up:hover {
+    background-color: #006CB3; /* Cor mais escura para o hover */
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    cursor: pointer; /* Indica que é um botão clicável */
+}
+
+
+
 /* --- PERFIS SALVOS --- */
 
 .account {
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding-left: 4.5rem;
+    padding-top: 3.3rem;
 }
 
 .account-login {
@@ -358,14 +400,10 @@ form {
     width: 0.813rem;
     height: 0.813rem;
     border-radius: 50%;
-    padding-top: 0.688rem;
-    padding-right: 0.625rem;
+    padding-top: 0.2rem;
+    padding-right: 0.2rem;
 }
 
-.img-delete-profile {
-    width: 0.813rem;
-    height: 0.813rem;
-}
 
 .profile-image {
     display: flex;
