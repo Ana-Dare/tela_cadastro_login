@@ -196,7 +196,7 @@ form {
 .form-sing-up:hover {
     color: #006CB3; /* Cor mais escura no hover */
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    transform: scale(1); /* Dá um pequeno aumento de tamanho */
     cursor: pointer; /* Aponta que o link é clicável */
 }
 
@@ -229,7 +229,7 @@ form {
 }
 
 .login-google:hover {
-    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    transform: scale(1); /* Aumenta um pouco o tamanho do botão */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
 }
 
@@ -260,7 +260,7 @@ form {
 }
 
 .login-buttons:hover {
-    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    transform: scale(1); /* Aumenta um pouco o tamanho do botão */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar */
 }
 
@@ -296,7 +296,7 @@ form {
 .forgot-password:hover {
     color: #006CB3; /* Cor mais escura no hover */
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-    transform: scale(1.05); /* Dá um pequeno aumento de tamanho */
+    transform: scale(1); /* Dá um pequeno aumento de tamanho */
     cursor: pointer; /* Aponta que o link é clicável */
 }
 
@@ -350,7 +350,7 @@ form {
 
 .btn-submit-sing-up:hover {
     background-color: #006CB3; /* Cor mais escura para o hover */
-    transform: scale(1.05); /* Aumenta um pouco o tamanho do botão */
+    transform: scale(1); /* Aumenta um pouco o tamanho do botão */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
     cursor: pointer; /* Indica que é um botão clicável */
 }
