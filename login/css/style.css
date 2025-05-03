@@ -16,6 +16,10 @@ form {
     width: 100%;
 }
 
+* {
+    outline: 1px solid red;
+}
+
 /* --- GERAL --- */
 
 .container {
@@ -34,16 +38,11 @@ form {
 
 }
 
-.container-white {
-    display: flex;
-    height: 50vh;
-    background-color: var(--color-white);
-    z-index: 0;
-}
-
 .container-container {
     display: flex;
     justify-content: center;
+    width: fit-content;
+    height: fit-content;
 
 }
 
@@ -127,10 +126,11 @@ form {
     background-color: var(--color-white);
     border-radius: 2.5rem;
     width: 33rem;
-    height: 35rem;
+    height: 45rem;
     padding: 2.75rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     z-index: 2;
+    box-sizing: border-box;
 }
 
 .header-form {
@@ -151,11 +151,11 @@ form {
 }
 
 .form-welcome {
-    color: #8D8D8D;
+    color:#000000;
     font-family: var(--font-description);
     font-weight: 400;
-    font-size: 1rem;
-    height: 2rem;
+    font-size: 1.3rem;
+    height: 2.8rem;
 }
 
 .lorem {
@@ -164,6 +164,7 @@ form {
     font-weight: 600;
     font-size: 1rem;
     width: 50%;
+    height: 2.8rem;
 }
 
 .form-sing-in {
@@ -171,23 +172,25 @@ form {
     color: #000000;
     font-family: var(--font-description);
     font-weight: 500;
-    font-size: 3.4375rem;
-    margin-top: 0.0625rem;
-}
-
-.form-account,
-.form-sing-up {
-    font-family: var(--font-description);
-    font-weight: 400;
-    font-size: 0.8125rem;
+    font-size: 3rem;
+    height: 5.1rem;
+    align-items: center;
 }
 
 .form-account {
+    font-family: var(--font-description);
+    font-weight: 400;
+    font-size: 0.8125rem;
     color: #8D8D8D;
+    height: 1.25rem;
 }
 
-.form-sing-up {
+.form-sing-up { 
+    font-family: var(--font-description);
+    font-weight: 400;
+    font-size: 0.8125rem;
     color: var(--color-light-blue);
+    height: 1.25rem;
 }
 
 /* --- LOGIN SOCIAL --- */
@@ -321,6 +324,7 @@ form {
 .account {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .account-login {
