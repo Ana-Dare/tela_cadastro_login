@@ -18,8 +18,8 @@
         };
 
         localStorage.setItem("userData", JSON.stringify(userData));
-      alert("Cadastro realizado com sucesso!");
-      window.location.href = "./login/index.html"; // redireciona para a página de login
+      alert("Cadastro realizado com sucesso, redirecionando para a página de login!");
+      window.location.href = "../login/index.html"; // redireciona para a página de login
       form.reset(); // limpa o formulário
     } else {
       alert("Preencha todos os campos!");
