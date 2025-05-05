@@ -303,6 +303,13 @@ form {
     padding-top: 1.188rem;
 }
 
+.enter-image {
+        padding-top: 1.188rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.813rem;
+    }
+
 .forgot-password {
     display: flex;
     justify-content: flex-end;
