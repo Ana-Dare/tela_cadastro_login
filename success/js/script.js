@@ -98,3 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const goToLogin = document.getElementById("go-to-register");
+  
+    if (goToLogin) {
+      goToLogin.addEventListener("click", function () {
+        window.location.href = "../register/index.html";
+      });
+    }
+  });

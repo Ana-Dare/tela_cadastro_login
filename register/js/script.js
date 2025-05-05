@@ -73,3 +73,13 @@ form.addEventListener("submit", function (e) {
     alert("Preencha todos os campos e envie uma foto!");
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const goToRegister = document.getElementById("go-to-login");
+
+  if (goToRegister) {
+      goToRegister.addEventListener("click", function () {
+      window.location.href = "../login/index.html";
+    });
+  }
+});
