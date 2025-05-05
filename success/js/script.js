@@ -84,10 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Atualiza os dados no localStorage
                     localStorage.setItem("userData", JSON.stringify(updatedUser));
-
                     alert("Dados atualizados com sucesso!");
-                    // Opcional: redirecionar para a página de login ou sucesso
-                    window.location.href = "../login/index.html";
                 };
 
                 reader.readAsDataURL(file); // Lê a imagem como base64
@@ -103,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 localStorage.setItem("userData", JSON.stringify(updatedUser));
                 alert("Dados atualizados com sucesso!");
-                window.location.href = "../login/index.html";
             }
         } else {
             alert("Preencha todos os campos!");
