@@ -7,20 +7,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginUsername = document.getElementById("username-or-email").value;
     const loginPassword = document.getElementById("password-field").value;
 
-    const storedUser = JSON.parse(localStorage.getItem("userData"));
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (storedUser) {
-        if ((storedUser.username === loginUsername || storedUser.email === loginUsername) && storedUser.password === loginPassword) {
-
-          localStorage.setItem("isLoggedIn", "true");
-          window.location.href = "../success/index.html"; // redireciona para a página de sucesso
-        } else {
-          alert("Usuário ou senha incorretos.");
-          loginForm.reset();
-        }
-      } 
-    });
-});
+    const foundUser = users.find(user => 
+      (user.username === loginUsername || user.email === loginUsername) &&
+      user.password === loginPassword
+    );
+    
+    if (foundUser) {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userData", JSON.stringify(foundUser)); // salva o usuário logado
+      window.location.href = "../success/index.html";
+    } else {
+      alert("Usuário ou senha incorretos.");
+      loginForm.reset();
+    }
+  })
 
 document.addEventListener("DOMContentLoaded", function () {
   const goToLogin = document.getElementById("go-to-register");
@@ -30,4 +32,5 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "../register/index.html";
     });
   }
+});
 });

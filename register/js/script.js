@@ -51,14 +51,27 @@ form.addEventListener("submit", function (e) {
 
         // Cria um objeto com os dados
         const userData = {
-          email, 
+          email,
           username,
           number,
           password,
           photo: photoBase64
         };
 
-        localStorage.setItem("userData", JSON.stringify(userData));
+        // Recupera os usuários existentes ou cria uma lista vazia
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        // Adiciona o novo usuário à lista de usuários
+        users.push(userData);
+
+        // Mantém apenas os 3 últimos registros
+        if (users.length > 3) {
+          users.shift(); // Remove o usuário mais antigo, mantendo apenas 3
+        }
+
+        // Armazena a lista atualizada no localStorage
+        localStorage.setItem("users", JSON.stringify(users));
+
         window.location.href = "../login/index.html"; // redireciona para a página de login
         form.reset(); // limpa o formulário
       };

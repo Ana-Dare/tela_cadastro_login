@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("Faça o login para ter acesso");
         window.location.href = "../login/index.html"; 
       }
       
@@ -22,11 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
         profileContainer.appendChild(profileDiv);
 
         profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
-            const confirmDelete = confirm("Deseja realmente excluir este perfil?");
-            if (confirmDelete) {
+         {      
                 localStorage.removeItem("userData");
+
+                
                 profileDiv.remove();
-                alert("Perfil removido com sucesso.");
+                form.reset();
+                window.location.href = "../register/index.html"; 
             }
         });
     }
@@ -40,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("username-field").value = storedUser.username;
         document.getElementById("number-field").value = storedUser.number;
         document.getElementById("password-field").value = storedUser.password;
+
 
         // Imagem de perfil
         if (storedUser.photo) {
@@ -80,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         localStorage.setItem("userData", JSON.stringify(updatedUser));
                         alert("Dados atualizados com sucesso!");
-                        renderProfile(updatedUser); // Atualiza a div sem recarregar
+
                     };
                     reader.readAsDataURL(file);
                 } else {
@@ -94,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     localStorage.setItem("userData", JSON.stringify(updatedUser));
                     alert("Dados atualizados com sucesso!");
-                    renderProfile(updatedUser); // Atualiza a div sem recarregar
+                    renderProfile(updatedUser);
                 }
             } else {
                 alert("Preencha todos os campos!");
