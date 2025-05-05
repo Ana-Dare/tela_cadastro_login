@@ -59,8 +59,6 @@ form.addEventListener("submit", function (e) {
         };
 
         localStorage.setItem("userData", JSON.stringify(userData));
-
-        alert("Cadastro realizado com sucesso, redirecionando para a página de login!");
         window.location.href = "../login/index.html"; // redireciona para a página de login
         form.reset(); // limpa o formulário
       };
@@ -70,7 +68,7 @@ form.addEventListener("submit", function (e) {
 
     reader.readAsDataURL(file); // lê a imagem como base64
   } else {
-    alert("Preencha todos os campos e envie uma foto!");
+    alert("Preencha todos os campos!");
   }
 });
 

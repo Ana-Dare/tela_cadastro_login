@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "../login/index.html"; 
+      }
+      
     const profileContainer = document.querySelector(".account-profile");
     const storedUser = JSON.parse(localStorage.getItem("userData"));
 

@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (storedUser) {
         if ((storedUser.username === loginUsername || storedUser.email === loginUsername) && storedUser.password === loginPassword) {
-          alert("Login bem-sucedido!");
+
+          localStorage.setItem("isLoggedIn", "true");
           window.location.href = "../success/index.html"; // redireciona para a página de sucesso
         } else {
           alert("Usuário ou senha incorretos.");
