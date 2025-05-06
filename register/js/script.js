@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
             password,
             photo: photoBase64 // Armazena a imagem como base64
           };
-
           // Recupera a lista de usuários existente ou cria uma nova
           let users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -96,6 +95,27 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Preencha todos os campos!");
     }
   });
+
+            //exibir imagem 
+            document.getElementById('photo-field').addEventListener('change', function(event) {
+              const file = event.target.files[0];
+              if (file) {
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                      const containerImg = document.querySelector(".enter-image");
+        
+                      const oldImage = containerImg.querySelector("img");
+                      if (oldImage) containerImg.removeChild(oldImage);
+        
+                      const image = new Image();
+                      image.src = e.target.result;
+                      image.classList.add("profile-image");
+                      containerImg.appendChild(image);
+                  };
+                  
+                  reader.readAsDataURL(file);
+              }
+          });
 
   // Redireciona para a página de login ao clicar no botão
   const goToLogin = document.getElementById("go-to-login");
