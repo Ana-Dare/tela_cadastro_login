@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     profileDiv.classList.add("saved-account-profile");
 
     profileDiv.innerHTML = `
-      <img src="./img/x-circle.svg" alt="delete" class="btn-delete" style="cursor: pointer;">
+      <img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="cursor: pointer;">
       <img src="${user.photo}" alt="image-profile" class="profile-image">
       <div class="profile-name">${user.username}</div>
       <div class="profile-activity">Active just now</div>
