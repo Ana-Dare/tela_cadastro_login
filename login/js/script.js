@@ -1,34 +1,45 @@
+// Aguarda o carregamento total do DOM
 document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("form-login");
+  // Seleciona o formulário de login
+  const loginForm = document.getElementById("form-login");
 
-    loginForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+  // Adiciona o evento de submit ao formulário
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Impede o comportamento padrão de envio do formulário
 
+    // Coleta os valores inseridos no formulário
     const loginUsername = document.getElementById("username-or-email").value;
     const loginPassword = document.getElementById("password-field").value;
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    // Obtém os usuários armazenados no localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || []; //transforma os dados json em um array
 
-    const foundUser = users.find(user => 
+    // Busca um usuário que tenha o mesmo nome de usuário ou e-mail e a senha correta
+    const foundUser = users.find(user => //percorre o array users e retorna o primeiro elemento que satisfaça a condição informada.
       (user.username === loginUsername || user.email === loginUsername) &&
       user.password === loginPassword
     );
-    
+
+    // Verifica se o usuário foi encontrado
     if (foundUser) {
+      // Salva o estado de login e o usuário no localStorage
       localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("userData", JSON.stringify(foundUser)); // salva o usuário logado
+      localStorage.setItem("userData", JSON.stringify(foundUser));
+
+      // Redireciona para a página de sucesso
       window.location.href = "../success/index.html";
     } else {
+      // Exibe um alerta se o usuário ou a senha estiverem incorretos
       alert("Usuário ou senha incorretos.");
-      loginForm.reset();
+      loginForm.reset(); // Reseta o formulário
     }
-  })
-});
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Verifica se o botão "Ir para cadastro" foi clicado
   const goToRegister = document.getElementById("go-to-register");
 
   if (goToRegister) {
+    // Redireciona para a página de registro
     goToRegister.addEventListener("click", function () {
       window.location.href = "../register/index.html";
     });
