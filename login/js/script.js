@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
       loginForm.reset();
     }
   })
+});
 
 document.addEventListener("DOMContentLoaded", function () {
-  const goToLogin = document.getElementById("go-to-register");
+  const goToRegister = document.getElementById("go-to-register");
 
-  if (goToLogin) {
-    goToLogin.addEventListener("click", function () {
+  if (goToRegister) {
+    goToRegister.addEventListener("click", function () {
       window.location.href = "../register/index.html";
     });
   }
-});
 });
