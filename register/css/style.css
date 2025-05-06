@@ -53,6 +53,7 @@ form {
 .top-half-left-text {
     display: flex;
     flex-direction: column;
+    padding-right: 3rem;
 }
 
 .top-half-left-figure {
@@ -102,6 +103,7 @@ form {
     height: 5.4rem;
     z-index: 0;
     width: 23rem;
+    align-items: center;
 }
 
 .description-text {
@@ -110,8 +112,7 @@ form {
     font-weight: 100;
     width: 19.4375rem;
     height: 7rem;
-    line-height: 100%;
-    padding-top: 1.3rem;
+    line-height: 120%;
 }
 
 /* --- LADO DIREITO (FORMULÁRIO) --- */
@@ -550,5 +551,3 @@ form {
         height: 100%;
     }
 }
-
-

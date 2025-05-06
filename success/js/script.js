@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Verifica se o usuário está logado
     if (localStorage.getItem("isLoggedIn") !== "true") {
-        alert("Faça o login para ter acesso");
         window.location.href = "../login/index.html"; // Redireciona para login
     }
 
+    const enterImageDiv = document.querySelector(".enter-image");
     const profileContainer = document.querySelector(".account-profile");
     const storedUser = JSON.parse(localStorage.getItem("userData")); // Obtém os dados do usuário logado
 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Atualiza a imagem do perfil no formulário
         function updateProfileImage(file) {
-            const enterImageDiv = document.querySelector(".enter-image");
+
             const existingImage = enterImageDiv.querySelector("img");
             if (existingImage) existingImage.remove();
 
@@ -119,14 +119,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         localStorage.setItem("userData", JSON.stringify(updatedUser));
                         updateUserInUsersArray(updatedUser);
                         alert("Dados atualizados com sucesso!");
-                        form.reset();
+
                     };
                     reader.readAsDataURL(file);
                 } else {
                     localStorage.setItem("userData", JSON.stringify(updatedUser));
                     updateUserInUsersArray(updatedUser);
                     alert("Dados atualizados com sucesso!");
-                    form.reset();
+
+
                 }
             } else {
                 alert("Preencha todos os campos!");
