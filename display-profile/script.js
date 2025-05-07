@@ -22,16 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
       const updatedUsers = users.filter(u => u.email !== user.email);
       localStorage.setItem("users", JSON.stringify(updatedUsers));
+      localStorage.setItem("userData", JSON.stringify(updatedUsers));
       profileDiv.remove();
+      
 
-      // Verifica se o usuário deletado é o logado
-      const storedUser = JSON.parse(localStorage.getItem("userData"));
-      if (storedUser && storedUser.email === user.email) {
-        localStorage.removeItem("userData"); // Remove os dados do usuário logado
-        localStorage.setItem("isLoggedIn", "false"); // Atualiza o status de login
-      }
     });
 
     profileContainer.appendChild(profileDiv);
+
   });
 });

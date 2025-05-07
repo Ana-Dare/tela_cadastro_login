@@ -10,34 +10,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // Coleta os valores inseridos no formulário
     const loginUsername = document.getElementById("username-or-email").value;
     const loginPassword = document.getElementById("password-field").value;
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+
     // Obtém os usuários armazenados no localStorage
-    
-    const foundUser = users.find(user => 
+    const users = JSON.parse(localStorage.getItem("users")) || []; //transforma os dados json em um array
+
+    // Busca um usuário que tenha o mesmo nome de usuário ou e-mail e a senha correta
+    const foundUser = users.find(user => //percorre o array users e retorna o primeiro elemento que satisfaça a condição informada.
       (user.username === loginUsername || user.email === loginUsername) &&
       user.password === loginPassword
     );
-    
+
+    // Verifica se o usuário foi encontrado
     if (foundUser) {
-      users.forEach(function(user) {
-        if (user.email === foundUser.email) {
-          user.isLoggedIn = true;
-        } else {
-          user.isLoggedIn = false;
-        }
-      });
-    
-      // Salva os usuários atualizados no localStorage
-      localStorage.setItem("users", JSON.stringify(users));
-    
-      // Salva o usuário logado no localStorage
       localStorage.setItem("userData", JSON.stringify(foundUser));
-    
       // Redireciona para a página de sucesso
       window.location.href = "../success/index.html";
     } else {
+      // Exibe um alerta se o usuário ou a senha estiverem incorretos
       alert("Usuário ou senha incorretos.");
-      loginForm.reset();
+      loginForm.reset(); // Reseta o formulário
     }
   });
 

@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Verifica se o usuário está logado
-    if (localStorage.getItem("isLoggedIn") !== "true") {
-        window.location.href = "../login/index.html"; // Redireciona para login
-    }
 
     const enterImageDiv = document.querySelector(".enter-image");
     const profileContainer = document.querySelector(".account-profile");
     const storedUser = JSON.parse(localStorage.getItem("userData")); // Obtém os dados do usuário logado
+    const userData = JSON.parse(localStorage.getItem("userData"));
+
+  if (!userData || Object.keys(userData).length === 0) {
+    window.location.href = "../login/index.html";
+  }
 
     // Função para renderizar os perfis dos usuários
     function renderProfiles() {
@@ -26,11 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     <div class="profile-name">${user.username}</div>
                     <div class="profile-activity">Active just now</div>
                 `;
-
-                profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
-                    deleteUserFromLocalStorage(user.email);
-                    profileDiv.remove();
-                });
 
                 profileContainer.appendChild(profileDiv);
             });
