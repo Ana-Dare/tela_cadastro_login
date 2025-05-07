@@ -1,38 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const enterImageDiv = document.querySelector(".enter-image");
     const profileContainer = document.querySelector(".account-profile");
     const storedUser = JSON.parse(localStorage.getItem("userData")); // Obtém os dados do usuário logado
     const userData = JSON.parse(localStorage.getItem("userData"));
-    const btnClsoeLogin = document.getElementById("close-login")
+    const logout = document.getElementById("logout-btn");
 
-  if (!userData || Object.keys(userData).length === 0) {
-    window.location.href = "../login/index.html";
-  }
+    if (!userData || Object.keys(userData).length === 0) {
+        window.location.href = "../login/index.html";
+    }
 
     // Função para renderizar os perfis dos usuários
     function renderProfiles() {
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        profileContainer.innerHTML = "";
-
-        if (users.length === 0) {
-            profileContainer.innerHTML = "<p>Nenhum perfil disponível</p>";
-        } else {
-            users.slice(-3).reverse().forEach(user => {
+   
                 const profileDiv = document.createElement("div");
                 profileDiv.classList.add("saved-account-profile");
 
                 profileDiv.innerHTML = `
                     <img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="cursor: pointer;">
-                    <img src="${user.photo}" alt="image-profile" class="profile-image">
-                    <div class="profile-name">${user.username}</div>
+                    <img src="${userData.photo}" alt="image-profile" class="profile-image">
+                    <div class="profile-name">${userData.username}</div>
                     <div class="profile-activity">Active just now</div>
                 `;
 
                 profileContainer.appendChild(profileDiv);
-            });
-        }
-    }
+            };   
+            renderProfiles() 
+            
 
     // Função para atualizar um usuário no array
     function updateUserInUsersArray(updatedUser) {
@@ -42,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         localStorage.setItem("users", JSON.stringify(updatedUsers));
-        renderProfiles();
+        renderProfiles();  // Chama novamente renderProfiles para garantir que os dados atualizados sejam exibidos
     }
 
     // Se o usuário estiver logado, renderiza os perfis
@@ -56,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Atualiza a imagem do perfil no formulário
         function updateProfileImage(file) {
-
             const existingImage = enterImageDiv.querySelector("img");
             if (existingImage) existingImage.remove();
 
@@ -114,17 +106,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     reader.onload = function () {
                         updatedUser.photo = reader.result;
                         localStorage.setItem("userData", JSON.stringify(updatedUser));
-                        updateUserInUsersArray(updatedUser);
+                        updateUserInUsersArray(updatedUser);  // Atualiza o array de usuários
                         alert("Dados atualizados com sucesso!");
-
                     };
                     reader.readAsDataURL(file);
                 } else {
                     localStorage.setItem("userData", JSON.stringify(updatedUser));
-                    updateUserInUsersArray(updatedUser);
+                    updateUserInUsersArray(updatedUser);  // Atualiza o array de usuários
                     alert("Dados atualizados com sucesso!");
-
-
                 }
             } else {
                 alert("Preencha todos os campos!");
@@ -132,12 +121,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
     // Redirecionamento para a página de registro
     const goToLogin = document.getElementById("go-to-register");
     if (goToLogin) {
         goToLogin.addEventListener("click", function () {
             window.location.href = "../register/index.html";
+        });
+    }
+
+    // Função de logout
+    if (logout) {
+        logout.addEventListener("click", function () {
+            localStorage.removeItem("userData"); // Remove usuário logado
+            window.location.href = "../login/index.html"; // Redireciona para login
         });
     }
 });

@@ -1,39 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
   const profileContainer = document.querySelector(".account-profile");
+  if (!profileContainer) return;
+
   const users = JSON.parse(localStorage.getItem("users")) || [];
-  const userData = JSON.parse(localStorage.getItem("userData")) || [];
-  
-  
-  // Mostra os 3 últimos usuários (do final para o começo)
-  const lastThreeUsers = users.slice(-4).reverse();
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const currentPage = window.location.pathname;
+  const isEditPage = currentPage.includes("success"); 
 
   profileContainer.innerHTML = ""; // Limpa conteúdo atual
 
-  lastThreeUsers.forEach(user => {
+  if (isEditPage && userData) {
+    // Exibe apenas o perfil logado na página de edição
+    renderProfile(userData, false);
+  } else {
+    // Exibe os 3 últimos usuários nas outras páginas
+    const lastThreeUsers = users.slice(-3).reverse();
+    lastThreeUsers.forEach(user => {
+      renderProfile(user, true);
+    });
+  }
+
+  function renderProfile(user, canDelete) {
     const profileDiv = document.createElement("div");
     profileDiv.classList.add("saved-account-profile");
 
     profileDiv.innerHTML = `
-      <img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="cursor: pointer;">
+      ${canDelete ? '<img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="cursor: pointer;">' : ""}
       <img src="${user.photo}" alt="image-profile" class="profile-image">
       <div class="profile-name">${user.username}</div>
       <div class="profile-activity">Active just now</div>
     `;
 
-    // Remover usuário do localStorage ao clicar no botão de deletar
+    if (canDelete) {
       profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
-      const updatedUsers = users.filter(u => u.email !== user.email);
+        const updatedUsers = users.filter(u => u.email !== user.email);
+        localStorage.setItem("users", JSON.stringify(updatedUsers));
 
-      localStorage.setItem("users", JSON.stringify(updatedUsers));
+        if (userData && userData.email === user.email) {
+          localStorage.removeItem("userData");
+        }
 
-      if (userData && userData.email === user.email) {
-        localStorage.removeItem("userData");
-      }
-     
-      profileDiv.remove();
-    });
+        profileDiv.remove();
+      });
+    }
 
     profileContainer.appendChild(profileDiv);
-
-  });
+  }
 });
