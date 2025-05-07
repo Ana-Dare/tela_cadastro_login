@@ -9,23 +9,24 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "../login/index.html";
     }
 
-    // Função para renderizar os perfis dos usuários
     function renderProfiles() {
-   
-                const profileDiv = document.createElement("div");
-                profileDiv.classList.add("saved-account-profile");
-
-                profileDiv.innerHTML = `
-                    <img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="cursor: pointer;">
-                    <img src="${userData.photo}" alt="image-profile" class="profile-image">
-                    <div class="profile-name">${userData.username}</div>
-                    <div class="profile-activity">Active just now</div>
-                `;
-
-                profileContainer.appendChild(profileDiv);
-            };   
-            renderProfiles() 
-            
+        const updatedUserData = JSON.parse(localStorage.getItem("userData"));
+        if (!updatedUserData || !profileContainer) return;
+    
+        profileContainer.innerHTML = ""; // limpa para evitar duplicação
+    
+        const profileDiv = document.createElement("div");
+        profileDiv.classList.add("saved-account-profile");
+    
+        profileDiv.innerHTML = `
+            <img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="display:none">
+            <img src="${updatedUserData.photo}" alt="image-profile" class="profile-image">
+            <div class="profile-name">${updatedUserData.username}</div>
+            <div class="profile-activity">Active just now</div>
+        `;
+    
+        profileContainer.appendChild(profileDiv);
+    }
 
     // Função para atualizar um usuário no array
     function updateUserInUsersArray(updatedUser) {
