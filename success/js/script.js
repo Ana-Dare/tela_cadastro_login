@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const profileContainer = document.querySelector(".account-profile");
     const storedUser = JSON.parse(localStorage.getItem("userData")); // Obtém os dados do usuário logado
     const userData = JSON.parse(localStorage.getItem("userData"));
+    const btnClsoeLogin = document.getElementById("close-login")
 
   if (!userData || Object.keys(userData).length === 0) {
     window.location.href = "../login/index.html";
@@ -130,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
 
     // Redirecionamento para a página de registro
     const goToLogin = document.getElementById("go-to-register");

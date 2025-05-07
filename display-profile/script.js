@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const profileContainer = document.querySelector(".account-profile");
   const users = JSON.parse(localStorage.getItem("users")) || [];
+  const userData = JSON.parse(localStorage.getItem("userData")) || [];
+  
   
   // Mostra os 3 últimos usuários (do final para o começo)
   const lastThreeUsers = users.slice(-4).reverse();
@@ -21,11 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Remover usuário do localStorage ao clicar no botão de deletar
       profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
       const updatedUsers = users.filter(u => u.email !== user.email);
-      localStorage.setItem("users", JSON.stringify(updatedUsers));
-      localStorage.setItem("userData", JSON.stringify(updatedUsers));
-      profileDiv.remove();
-      
 
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+      if (userData && userData.email === user.email) {
+        localStorage.removeItem("userData");
+      }
+     
+      profileDiv.remove();
     });
 
     profileContainer.appendChild(profileDiv);
