@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     // Remover usuário do localStorage ao clicar no botão de deletar
-    profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
+      profileDiv.querySelector(".btn-delete").addEventListener("click", function () {
       const updatedUsers = users.filter(u => u.email !== user.email);
       localStorage.setItem("users", JSON.stringify(updatedUsers));
       localStorage.setItem("userData", JSON.stringify(updatedUsers));
