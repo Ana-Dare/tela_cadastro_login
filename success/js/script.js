@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const profileContainer = document.querySelector(".account-profile");
     const storedUser = JSON.parse(localStorage.getItem("userData")); // Obtém os dados do usuário logado
     const userData = JSON.parse(localStorage.getItem("userData"));
-    const logout = document.getElementById("logout-btn");
+    const logout = document.getElementById("btn-logout");
 
     if (!userData || Object.keys(userData).length === 0) {
         window.location.href = "../login/index.html";
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="../img/x-circle.svg" alt="delete" class="btn-delete" style="display:none">
             <img src="${updatedUserData.photo}" alt="image-profile" class="profile-image">
             <div class="profile-name">${updatedUserData.username}</div>
-            <div class="profile-activity">Active just now</div>
+            <div class="profile-activity">Active jgggg now</div>
         `;
     
         profileContainer.appendChild(profileDiv);
@@ -122,19 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Redirecionamento para a página de registro
-    const goToLogin = document.getElementById("go-to-register");
-    if (goToLogin) {
-        goToLogin.addEventListener("click", function () {
-            window.location.href = "../register/index.html";
-        });
-    }
 
-    // Função de logout
-    if (logout) {
-        logout.addEventListener("click", function () {
-            localStorage.removeItem("userData"); // Remove usuário logado
-            window.location.href = "../login/index.html"; // Redireciona para login
-        });
-    }
+    logout.addEventListener("click", function () {
+        localStorage.removeItem("userData");
+        window.location.href = "../login/index.html";
+    })
 });
+
+    

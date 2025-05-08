@@ -1,6 +1,10 @@
-// Aguarda o carregamento total do DOM
 document.addEventListener("DOMContentLoaded", function () {
-  // Seleciona o formulário de login
+  window.addEventListener("storage", function (e) {
+    if (e.key === "users") {
+      location.reload(); // só recarrega se a chave 'users' foi alterada
+    }
+  });
+  
   const loginForm = document.getElementById("form-login");
 
   // Adiciona o evento de submit ao formulário

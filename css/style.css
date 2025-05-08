@@ -459,6 +459,23 @@ form {
     color: #ADADAD;
 }
 
+.logout {
+    font-weight: 400;
+    font-size: 0.813rem;
+    color: var(--color-light-blue);
+    padding-top: 0.75rem;
+    cursor: pointer;
+    padding-left: 8rem;
+}
+
+.logout:hover {
+    color: #006CB3; /* Cor mais escura no hover */
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    transform: scale(1); /* Dá um pequeno aumento de tamanho */
+    cursor: pointer; /* Aponta que o link é clicável */
+}
+
+
 @media (max-width: 960px)  {
     html, body {
       width: 100%;

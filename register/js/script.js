@@ -1,6 +1,11 @@
-// Ao carregar o conteúdo da página
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("form-register");
+  window.addEventListener("storage", function (e) {
+    if (e.key === "users") {
+      location.reload(); // só recarrega se a chave 'users' foi alterada
+    }
+  });
   
   // Quando o formulário de registro for enviado
   form.addEventListener("submit", function (e) {
