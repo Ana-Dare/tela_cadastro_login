@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loginForm.reset(); // Reseta o formulário
     }
   });
-
+const goToRegister = document.getElementById("go-to-register")
   if (goToRegister) {
     goToRegister.addEventListener("click", function () {
       window.location.href = "../register/index.html";
