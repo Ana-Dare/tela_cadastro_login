@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const enterImageDiv = document.querySelector(".enter-image");
     const profileContainer = document.querySelector(".account-profile");
-    const storedUser = JSON.parse(localStorage.getItem("userData")); // Obtém os dados do usuário logado
+    const storedUser = JSON.parse(localStorage.getItem("userData")); 
     const userData = JSON.parse(localStorage.getItem("userData"));
     const logout = document.getElementById("btn-logout");
 
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const updatedUserData = JSON.parse(localStorage.getItem("userData"));
         if (!updatedUserData || !profileContainer) return;
     
-        profileContainer.innerHTML = ""; // limpa para evitar duplicação
+        profileContainer.innerHTML = "";
     
         const profileDiv = document.createElement("div");
         profileDiv.classList.add("saved-account-profile");
@@ -121,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
 
     logout.addEventListener("click", function () {
         localStorage.removeItem("userData");

@@ -1,27 +1,18 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form-register");
-  window.addEventListener("storage", function (e) {
-    if (e.key === "users") {
-      location.reload(); // só recarrega se a chave 'users' foi alterada
-    }
-  });
-  
-  // Quando o formulário de registro for enviado
-  form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Previne o envio padrão do formulário
-  
+const form = document.getElementById("form-register");
 
-  // Obtendo os valores dos campos do formulário
+  form.addEventListener("submit", function (e) {
+  e.preventDefault(); 
+  
   const email = document.getElementById("username-or-email").value;
   const username = document.getElementById("username-field").value;
   const number = document.getElementById("number-field").value;
   const password = document.getElementById("password-field").value;
   const photoInput = document.getElementById("photo-field");
-  const file = photoInput.files[0]; // Obtém o arquivo da imagem
+  const file = photoInput.files[0]; 
   const users = JSON.parse(localStorage.getItem("users")) || []; 
   
-  //função que verifica se o email digitado já
   function emailAvailable(email) {
     const emailExists = users.some(function(user) {
     return user.email === email;
@@ -35,8 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Verifica se todos os campos obrigatórios foram preenchidos
   if (username && number && password && email && file) {
-    const reader = new FileReader(); // Usado para ler a imagem
-  
+    const reader = new FileReader(); 
     // Função que será chamada quando a imagem for lida
     reader.onload = function () {
       const img = new Image(); // Cria um objeto de imagem
@@ -45,15 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
       img.onload = function () {
         // Criação de um canvas para redimensionar a imagem
         const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d'); // Contexto de 2D do canvas
-  
-        // Definição do tamanho máximo da imagem
+        const ctx = canvas.getContext('2d'); 
+
         const maxWidth = 200;
         const maxHeight = 200;
         let width = img.width;
         let height = img.height;
-  
-        // Redimensiona a imagem para que ela não ultrapasse os limites
+
         if (width > height) {
           if (width > maxWidth) {
             height = Math.round(height * maxWidth / width);
@@ -65,30 +53,26 @@ document.addEventListener("DOMContentLoaded", function () {
             height = maxHeight;
           }
         }
-  
-        // Define o tamanho do canvas para o novo tamanho da imagem
+
         canvas.width = width;
         canvas.height = height;
   
-        // Desenha a imagem redimensionada no canvas
         ctx.drawImage(img, 0, 0, width, height);
   
-        // Converte o canvas em uma imagem base64
         const photoBase64 = canvas.toDataURL();
   
-        // Cria um objeto com os dados do usuário
         const userData = {
           email,
           username,
           number,
           password,
-          photo: photoBase64 // Armazena a imagem como base64
+          photo: photoBase64 
         };
  
         let users = JSON.parse(localStorage.getItem("users")) || [];
   
         // Adiciona o novo usuário à lista
-        users.push(userData); //adiciona userdata ao final do array users
+        users.push(userData); 
   
         // Mantém no máximo os 3 últimos registros
         if (users.length > 3) { 
@@ -100,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
         // Redireciona para a página de login
         window.location.href = "../login/index.html";
-        form.reset(); // Limpa o formulário após o envio
+        form.reset(); 
       };
   
       // Inicia o carregamento da imagem após a leitura do arquivo
@@ -139,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Redireciona para a página de login ao clicar no botão
   const goToLogin = document.getElementById("go-to-login");
-  
   if (goToLogin) {
   goToLogin.addEventListener("click", function () {
     window.location.href = "../login/index.html";
