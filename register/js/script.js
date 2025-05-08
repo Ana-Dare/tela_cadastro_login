@@ -1,7 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-const form = document.getElementById("form-register");
-
+  window.addEventListener("storage", function (e) {
+    if (e.key === "users") {
+      location.reload(); // só recarrega se a chave 'users' foi alterada
+    }
+  });
+  
+  const form = document.getElementById("form-register");
   form.addEventListener("submit", function (e) {
   e.preventDefault(); 
   
